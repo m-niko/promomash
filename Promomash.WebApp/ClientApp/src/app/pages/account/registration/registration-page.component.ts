@@ -2,6 +2,10 @@ import {Component, OnInit} from "@angular/core";
 import {Country} from "../../../features/account/country.model";
 import {CountryService} from "../../../features/account/country.service";
 import {Province} from "../../../features/account/province.model";
+import {RegistrationModel} from "../../../features/account/registration/registration.model";
+import {AccountService} from "../../../features/account/user.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'registration-page',
@@ -11,7 +15,10 @@ import {Province} from "../../../features/account/province.model";
 export class RegistrationPageComponent implements OnInit{
   countries: Country[]
   provinces: Province[]
-  constructor(private _countryService: CountryService) {
+  constructor(private _countryService: CountryService,
+              private _accountService: AccountService,
+              private _snackBar: MatSnackBar,
+              private _router: Router) {
   }
 
   ngOnInit(): void {
@@ -26,5 +33,15 @@ export class RegistrationPageComponent implements OnInit{
     this._countryService
       .getProvincesByCountryId(country.id)
       .subscribe(p => this.provinces = p);
+  }
+
+  onCreate(data: RegistrationModel){
+    this._accountService.create(data).subscribe(() => {
+      this._router.navigate(["account/registration/success"])
+    }, error => {
+      this._snackBar.open(error.message, 'Ok', {
+        duration: 5000
+      });
+    })
   }
 }

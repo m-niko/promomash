@@ -12,5 +12,6 @@ namespace Promomash.Domain.CountryAggregate
             Name = Guard.Against.NullOrEmpty(name, nameof(name));
         }
         public string Name { get; private set; }
+        public Country Country { get; set; }
     }
 }

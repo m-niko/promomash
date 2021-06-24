@@ -35,29 +35,24 @@ namespace Promomash.WebApp.Application.Features.Country
                     Name = name;
                 }
 
-                public int Id { get; set; }
-                public string Name { get; set; }
+                public int Id { get; }
+                public string Name { get; }
             }
         }
         
         public class Handler : IRequestHandler<Query, Response>
         {
             private readonly ICountryRepository _countryRepository;
-
-
             public Handler(ICountryRepository countryRepository)
             {
                 _countryRepository = countryRepository;
             }
             public async Task<Response> Handle(Query request, CancellationToken cancellationToken)
             {
-                var country = await _countryRepository.GetByIdAsync(request.CountryId, cancellationToken);
-
-                if (country == null)
-                    throw new ApplicationException($"Country with id = {request.CountryId} is not found");
+                var provinces = await _countryRepository.GetProvincesByCountryIdAsync(request.CountryId, cancellationToken);
 
                 return new Response
-                    { Provinces = country.Provinces.Select(s => new Response.Province(s.Id, s.Name)).ToList() };
+                    { Provinces = provinces.Select(s => new Response.Province(s.Id, s.Name)).ToList() };
             }
         }
     }

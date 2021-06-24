@@ -42,7 +42,13 @@ namespace Promomash.WebApp
                 builder.UseSqlServer(Configuration.GetConnectionString("PromomashDb"),
                     optionsBuilder => optionsBuilder.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name)));
             
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>(options =>
+                {
+                    options.Password.RequireDigit = true;
+                    options.Password.RequiredLength = 2;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                })
                 .AddEntityFrameworkStores<ApplicationIdentityDbContext>();
             
             services.AddMediatR(typeof(Startup));

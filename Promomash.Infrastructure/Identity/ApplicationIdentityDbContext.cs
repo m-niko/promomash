@@ -8,7 +8,8 @@ namespace Promomash.Infrastructure.Identity
     public class ApplicationIdentityDbContext : IdentityDbContext<User>
     {
         public DbSet<Country> Countries { get; set; }
-        
+        public DbSet<Province> Provinces { get; set; }
+
         public ApplicationIdentityDbContext(DbContextOptions options) : base(options){ } 
         
         protected override void OnModelCreating(ModelBuilder builder)

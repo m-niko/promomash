@@ -7,11 +7,7 @@ namespace Promomash.Infrastructure.Identity.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.OwnsOne(u => u.Location, navigationBuilder =>
-            {
-                navigationBuilder.Property(p => p.CountryId).IsRequired();
-                navigationBuilder.Property(p => p.ProvinceId).IsRequired();
-            });
+            
         }
     }
 }

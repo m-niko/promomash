@@ -1,0 +1,9 @@
+/dist/
+
+.idea/
+obj/
+build/
+Debug/
+node_modules
+
+npm-debug.log

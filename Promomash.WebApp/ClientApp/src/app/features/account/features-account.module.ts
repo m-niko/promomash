@@ -9,7 +9,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {CommonModule} from "@angular/common";
 import {MatSelectModule} from "@angular/material/select";
 import {CountryService} from "./country.service";
-import {AccountService} from "./account.service";
+import {AccountService} from "./user.service";
 
 @NgModule({
     imports: [

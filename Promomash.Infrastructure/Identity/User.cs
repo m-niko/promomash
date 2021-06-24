@@ -1,18 +1,20 @@
+using Ardalis.GuardClauses;
 using Microsoft.AspNetCore.Identity;
+using Promomash.Domain.CountryAggregate;
 
 namespace Promomash.Infrastructure.Identity
 {
     public sealed class User : IdentityUser
     {
         private User(){}
-        public User(string login, Location location, bool isAgreeToWorkForFood)
+        public User(string login, Province province, bool isAgreeToWorkForFood)
         {
-            UserName = login;
+            UserName = Guard.Against.NullOrWhiteSpace(login, nameof(login));
             Email = login;
-            Location = location;
-            IsAgreeToWorkForFood = isAgreeToWorkForFood;
+            Province = Guard.Against.Null(province, nameof(province)) ;
+            IsAgreeToWorkForFood = Guard.Against.Default(isAgreeToWorkForFood, nameof(isAgreeToWorkForFood)) ;
         }
-        public Location Location { get; private set; }
+        public Province Province { get; private set; }
         public bool IsAgreeToWorkForFood { get; private set; }
     }
 }

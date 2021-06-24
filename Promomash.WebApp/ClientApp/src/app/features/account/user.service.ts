@@ -10,7 +10,7 @@ import {RegistrationModel} from "./registration/registration.model";
 export class AccountService {
   private readonly apiHost: string;
   constructor(private _http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    this.apiHost = `${baseUrl}/account`;
+    this.apiHost = `${baseUrl}api/users`;
   }
 
   create(formData: RegistrationModel): Observable<any> {

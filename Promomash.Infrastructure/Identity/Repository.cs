@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -19,11 +18,21 @@ namespace Promomash.Infrastructure.Identity
         }
 
         public Task<Country> GetByIdAsync(int countryId,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             return _dbContext.Countries
                 .Include(i => i.Provinces)
                 .FirstAsync(c => c.Id == countryId, cancellationToken);
+        }
+
+        public Task<Province> GetProvinceByIdAsync(int provinceId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return _dbContext.Provinces.FirstAsync(p => p.Id == provinceId, cancellationToken);
+        }
+
+        public Task<List<Province>> GetProvincesByCountryIdAsync(int countryId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return _dbContext.Provinces.Where(p => p.Country.Id == countryId).ToListAsync(cancellationToken);
         }
 
         public Task<List<Country>> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken))

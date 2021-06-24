@@ -3,13 +3,12 @@ import {Observable} from "rxjs";
 import {Country} from "./country.model";
 import {Province} from "./province.model";
 import {Inject, Injectable} from "@angular/core";
-import {map, tap} from "rxjs/operators";
+import {map} from "rxjs/operators";
 
 @Injectable()
 export class CountryService {
     private readonly apiHost: string;
     constructor(private _http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-      debugger
       this.apiHost = `${baseUrl}api/countries`;
     }
 

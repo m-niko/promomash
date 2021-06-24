@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {PagesAccountModule} from "./pages/account/pages-account.module";
+import {PagesAccountModule} from "./pages/pages.module";
 
 
 @NgModule({

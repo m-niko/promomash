@@ -14,12 +14,13 @@ namespace Promomash.FunctionalTests
     public class TestBase
     {
         protected TestServer TestServer { get; private set; }
+        protected ApplicationIdentityDbContext DbContext { get; private set; }
         [OneTimeSetUp]
         public void OnTimeSetup()
         {
             TestServer = CreateServer();
-            using var context = TestServer.Services.GetService<ApplicationIdentityDbContext>();
-            SeedData.Initialize(context);
+            DbContext = TestServer.Services.GetService<ApplicationIdentityDbContext>();
+            SeedData.Initialize(DbContext);
         }
         
         [OneTimeTearDown]

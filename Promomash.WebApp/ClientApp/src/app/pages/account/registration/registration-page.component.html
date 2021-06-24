@@ -1,1 +1,6 @@
-<registration-stepper [countries]="countries" [provinces]="provinces" (onCountryChanged)="onCountryChanged($event)"></registration-stepper>
+<registration-stepper [countries]="countries"
+                      [provinces]="provinces"
+                      (onCountryChanged)="onCountryChanged($event)"
+                      (onCreate)="onCreate($event)"
+>
+</registration-stepper>

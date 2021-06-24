@@ -844,6 +844,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Ardalis.GuardClauses >= 3.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.7",
       "Promomash.Domain >= 1.0.0"
     ]
@@ -893,6 +894,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Ardalis.GuardClauses": {
+            "target": "Package",
+            "version": "[3.2.0, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.7, )"

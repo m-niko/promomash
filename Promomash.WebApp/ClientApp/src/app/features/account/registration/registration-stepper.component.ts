@@ -17,26 +17,31 @@ export class RegistrationStepperComponent implements OnInit {
   @Output() onCountryChanged = new EventEmitter<Country>();
   @Output() onCreate = new EventEmitter<RegistrationModel>();
 
-  accountFormGroup: FormGroup;
-  locationFormGroup: FormGroup;
+  formGroup: FormGroup;
   private readonly _passwordValidationPattern: string = '^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'
 
   constructor(private _fb: FormBuilder) {
   }
 
   ngOnInit() {
-
-    this.accountFormGroup = this._fb.group({
-      login: ['', Validators.email],
-      password: ['', Validators.pattern(this._passwordValidationPattern)],
-      confirmPassword: [''],
-      agreeToWorkForFood: [false, Validators.required]
-    }, {validators: this.checkPasswords})
-
-    this.locationFormGroup = this._fb.group({
-      country: [null, Validators.required],
-      province: [null, Validators.required]
+    this.formGroup = this._fb.group({
+      formArray: this._fb.array([
+        this._fb.group({
+          login: ['', Validators.email],
+          password: ['', Validators.pattern(this._passwordValidationPattern)],
+          confirmPassword: [''],
+          isAgreeToWorkForFood: [false, Validators.required]
+        }, {validators: this.checkPasswords}),
+        this._fb.group({
+          country: [null, Validators.required],
+          province: [null, Validators.required]
+        })
+      ])
     })
+  }
+
+  get formArray() {
+    return this.formGroup.get('formArray')
   }
 
   onCountrySelected(evt: MatSelectChange){
@@ -56,6 +61,11 @@ export class RegistrationStepperComponent implements OnInit {
   }
 
   onSubmit(){
+    let formArrayData = this.formArray.value;
+    let firstStep = formArrayData[0];
+    let secondStep = formArrayData[1];
 
+    let registrationModel = {...firstStep, provinceId: secondStep.province.id} as RegistrationModel;
+    this.onCreate.emit(registrationModel);
   }
 }
