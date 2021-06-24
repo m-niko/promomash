@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promomash.WebApp", "Promomash.WebApp\Promomash.WebApp.csproj", "{95C8521D-B6CB-42A0-938A-6C4DAC6D866B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promomash.Domain", "Promomash.Domain\Promomash.Domain.csproj", "{07BF999B-BBBC-4F14-A95A-47C30A457553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promomash.Infrastructure", "Promomash.Infrastructure\Promomash.Infrastructure.csproj", "{318FC4D8-14DC-4DA6-BA01-B270D0BC2FD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promomash.FunctionalTests", "Promomash.FunctionalTests\Promomash.FunctionalTests.csproj", "{3D648E6F-FADC-4776-BB8A-CCA47E17C5C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95C8521D-B6CB-42A0-938A-6C4DAC6D866B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C8521D-B6CB-42A0-938A-6C4DAC6D866B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C8521D-B6CB-42A0-938A-6C4DAC6D866B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C8521D-B6CB-42A0-938A-6C4DAC6D866B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07BF999B-BBBC-4F14-A95A-47C30A457553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07BF999B-BBBC-4F14-A95A-47C30A457553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07BF999B-BBBC-4F14-A95A-47C30A457553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07BF999B-BBBC-4F14-A95A-47C30A457553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318FC4D8-14DC-4DA6-BA01-B270D0BC2FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318FC4D8-14DC-4DA6-BA01-B270D0BC2FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318FC4D8-14DC-4DA6-BA01-B270D0BC2FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318FC4D8-14DC-4DA6-BA01-B270D0BC2FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D648E6F-FADC-4776-BB8A-CCA47E17C5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D648E6F-FADC-4776-BB8A-CCA47E17C5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D648E6F-FADC-4776-BB8A-CCA47E17C5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D648E6F-FADC-4776-BB8A-CCA47E17C5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "SUvOkvazE1uRFsCrUJDPyAA5I3q8iePpau99EfB1H6enRxnf35F5uvlkDi/671b5a1btO2r3L18sah4BQdPF/Q==",
+  "success": true,
+  "projectFilePath": "/Users/Niko/RiderProjects/Promomash/Promomash.Domain/Promomash.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/Niko/.nuget/packages/ardalis.guardclauses/3.2.0/ardalis.guardclauses.3.2.0.nupkg.sha512",
+    "/Users/Niko/.nuget/packages/jetbrains.annotations/2021.1.0/jetbrains.annotations.2021.1.0.nupkg.sha512",
+    "/Users/Niko/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
